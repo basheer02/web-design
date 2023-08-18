@@ -1,8 +1,25 @@
 <html>
-    <script type="text/javascript" src="https://otpless.com/auth.js" ></script>
-    <script type="text/javascript"> 
-        function otpless(otplessUser) {
-         console.log(JSON.stringify(otplessUser));
-        }
-       </script>
+
+    <script>
+        // Import the OTPLess library.
+        const OTPLess = require('otpless');
+    
+        // Initialize the OTPLess client.
+        const client = new OTPLess('Pg6v43sR');
+    
+        // Create a login button.
+        const loginButton = document.getElementById('loginButton');
+    
+        loginButton.addEventListener('click', async () => {
+            // Get the user's phone number.
+            const phoneNumber = prompt('Enter your phone number:');
+        
+            // Redirect the user to WhatsApp to get the verification link.
+            const url = await client.getWhatsAppLoginUrl(phoneNumber);
+            window.open(url, '_blank');
+        });
+    
+    </script>
+
+
 </html>
