@@ -1,31 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>OTPLess Login</title>
-</head>
 <body>
-    <h1>OTPLess Login</h1>
-    <p>Enter your phone number to login.</p>
-    <input type="text" id="phoneNumber" placeholder="Phone number">
-    <button id="loginButton">Login</button>
-
-  <script src="https://unpkg.com/otpless/dist/otpless.min.js"></script>
-  <script>
-    const OTPLess = require('otpless');
-
-    // Initialize the OTPLess client.
-    const client = new OTPLess('Pg6v43sR');
-
-    // Create a login button.
-    const loginButton = document.getElementById('loginButton');
-    loginButton.addEventListener('click', async () => {
-      // Get the user's phone number.
-      const phoneNumber = document.getElementById('phoneNumber').value;
-
-      // Redirect the user to WhatsApp to get the verification link.
-      const url = await client.getWhatsAppLoginUrl(phoneNumber);
-      window.open(url, '_blank');
-    });
-  </script>
+    <h1>Melcowe</h1>
 </body>
 </html>
